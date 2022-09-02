@@ -1,0 +1,37 @@
+.invert-focus-left .invert-left {
+  color: white;
+  background-color: #55ACEE;
+  width: 60%;
+  padding-left: 5rem;
+  padding-right: 5rem;
+}
+
+.invert-focus-left .invert-right {
+  color: black;
+  background-color: #FFFFFF;
+  width: 40%;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+.invert-focus-right .invert-left {
+  background-color: #FFFFFF;
+  width: 40%;
+  margin: 0;
+  padding-left: 5rem;
+  padding-right: 5rem;
+}
+
+.invert-focus-right .invert-right {
+  background-color: #55ACEE;
+  width: 60%;
+}
+
+.sign-in-form-container {
+  margin-top: 10rem;
+}
+
+.sign-in-input {
+  padding: 0.5rem;
+  width: 100%;
+}

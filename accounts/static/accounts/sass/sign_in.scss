@@ -1,0 +1,43 @@
+@import 'homepage/sass_common/colors';
+
+.invert-focus-left {
+    .invert-left {
+        color: white;
+        background-color: $primary-color;
+        width: 60%;
+        padding-left: 5rem;
+        padding-right: 5rem;
+    }
+    
+    .invert-right {
+        color: black;
+        background-color: $white-color;
+        width: 40%;
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+}
+
+.invert-focus-right {
+    .invert-left {
+        background-color: $white-color;
+        width: 40%;
+        margin: 0;
+        padding-left: 5rem;
+        padding-right: 5rem;
+    }
+    
+    .invert-right {
+        background-color: $primary-color;
+        width: 60%;
+    }
+}
+
+.sign-in-form-container {
+    margin-top: 10rem
+}
+
+.sign-in-input {
+    padding: 0.5rem;
+    width: 100%;
+}

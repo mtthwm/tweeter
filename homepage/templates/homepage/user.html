@@ -1,0 +1,48 @@
+{% extends 'homepage/base.htm' %}
+{% block pagestyles %}
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'accounts/css/users.css' %}">
+{% endblock pagestyles %}
+{% block content %}
+<div class="main-block p-5 column align-items-center">
+    {% if is_self %}
+    <form method="POST">
+        {% csrf_token %}
+        {{new_tweet_form}}
+    </form>
+    {% endif %}
+
+    {% if user_tweets %}
+        {% for tweet in user_tweets %}
+            <div class="tweetContainer" x-data="{'likes': {{tweet.likes}}}">
+                <p>{{tweet.content}} - 
+                {% if is_self %}
+                <span x-text="likes"></span> likes
+                {% else %}
+                <a x-on:click="
+                    let form_body = new FormData();
+                    form_body.append('csrfmiddlewaretoken', '{{csrf_token}}');
+                    let request_content = {
+                        method: 'POST', 
+                        body: form_body,
+                        credentials: 'same-origin',
+                    }
+                    fetch('/like_post/{{tweet.id}}', request_content).then(response=>response.json()).then(response=>{
+                        likes = response.likes
+                    })
+                "><span x-text="likes"></span> likes</a>
+                {% endif %}
+                 - {{tweet.date}} - {{tweet.last_hour_likes}}</p>
+            </div>
+        {% endfor %}
+    {% else %}
+        <h1>No Tweets to show yet!</h1>
+    {% endif %}
+</div>
+{% comment %} <div class="column">
+HASHTAG
+{% for tag in hashtags %}
+    <h1>{{tag.text}} - {{tag.trending_score}}</h1> 
+{% endfor %}
+</div> {% endcomment %}
+{% endblock content %}

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tweeter</title>
+
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'homepage/css/base.css' %}">
+    {% block pagestyles %}
+    {% endblock pagestyles %}
+
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap" rel="stylesheet">
+
+    <script type="module" src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js"></script>
+    <script nomodule src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine-ie11.min.js" defer></script>
+</head>
+<body>
+    <div class="container h-100">
+        <div class="row h-100">
+            <div class="column primary-sidebar align-items-center justify-content-center h-100">
+                <h2>option1</h2>
+                <h2>option2</h2>
+                <h2>option3</h2>
+                <h2>option4</h2>
+                <h2>option1</h2>
+                <h2>option2</h2>
+                <h2>option3</h2>
+                <h2>option4</h2>
+            </div>
+            {% block content %}
+            {% endblock content %}
+            <div class="column align-items-center h-100">
+                {% block searchbar %}
+                <div class="row border">
+                    <input x-on: class="border-none"/>
+                    <i class="icon-input-icon">S</i>
+                </div>
+                {% endblock searchbar %}
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,5 +1,7 @@
 #Tweeter
 
+This project was essentially a Twitter clone that I worked on during the summer of 2020. At the time I still often neglected to use version control (for some reason) so I just pushed everything I did in case I ever want to go back to it.
+
 ##Running the app
 
 ###Basic
